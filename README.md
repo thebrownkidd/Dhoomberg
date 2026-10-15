@@ -31,7 +31,7 @@ A commodity intelligence terminal for FMCG and supply chain teams. Runs entirely
 | npm | ≥ 10 |
 
 ```bash
-git clone https://github.com/<you>/dhoomberg
+git clone https://github.com/Thebrownkidd/dhoomberg
 cd dhoomberg
 npm install
 pip install -r requirements.txt

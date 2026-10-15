@@ -13,10 +13,6 @@ Issues that are out of scope:
 - Attacks requiring physical access to the machine
 - Attacks requiring the user to install a malicious plugin themselves (plugins run with the user's own permissions by design; only install trusted plugins)
 
-## Reporting a vulnerability
-
-Please **do not** open a public GitHub issue. Email security findings to the maintainer directly. We aim to respond within 48 hours and to publish a patch within 14 days.
-
 ## Known design decisions
 
 **Python plugins run with your permissions.** The `plugins/` directory is loaded automatically. Only put plugins you trust there. This is documented in the README.
