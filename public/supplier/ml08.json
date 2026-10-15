@@ -1,0 +1,234 @@
+{
+  "model": "ML-08 Supply Chain Risk Scoring",
+  "weights": {
+    "concentration": 0.3,
+    "financial": 0.25,
+    "geopolitical": 0.25,
+    "climate": 0.2
+  },
+  "dataSources": {
+    "concentration": "SYNTHETIC (demo) \u2014 replace with user ERP spend data",
+    "financial": "SYNTHETIC (demo) \u2014 replace with D&B / Moody's credit scores",
+    "geopolitical": "World Bank WGI 2023 political stability + ACLED 90-day event count (approximated from public ACLED portal)",
+    "climate": "ND-GAIN Country Index 2022 (Notre Dame Global Adaptation Initiative)"
+  },
+  "asOf": "2026-10-12",
+  "suppliers": [
+    {
+      "id": "SUP-003",
+      "name": "Kyiv Grain Exports Ltd.",
+      "country": "UKR",
+      "commodity": "WHEAT",
+      "riskScore": 72.1,
+      "ragStatus": "RED",
+      "topDriver": "geopolitical",
+      "dimensions": {
+        "concentration": 72.5,
+        "financial": 73.0,
+        "geopolitical": 93.2,
+        "climate": 44.2
+      },
+      "spendPct": 29.0,
+      "creditScore": 42,
+      "dpoTrend": "worsening"
+    },
+    {
+      "id": "SUP-002",
+      "name": "Ivory Coast Cocoa Corp.",
+      "country": "CIV",
+      "commodity": "COCOA",
+      "riskScore": 67.8,
+      "ragStatus": "AMBER",
+      "topDriver": "concentration",
+      "dimensions": {
+        "concentration": 100.0,
+        "financial": 60.0,
+        "geopolitical": 42.2,
+        "climate": 61.5
+      },
+      "spendPct": 52.0,
+      "creditScore": 55,
+      "dpoTrend": "worsening"
+    },
+    {
+      "id": "SUP-007",
+      "name": "Gold Grain India",
+      "country": "IND",
+      "commodity": "RICE",
+      "riskScore": 59.6,
+      "ragStatus": "AMBER",
+      "topDriver": "concentration",
+      "dimensions": {
+        "concentration": 100.0,
+        "financial": 30.0,
+        "geopolitical": 47.4,
+        "climate": 51.2
+      },
+      "spendPct": 41.0,
+      "creditScore": 70,
+      "dpoTrend": "stable"
+    },
+    {
+      "id": "SUP-001",
+      "name": "Agrofarm Brasil S.A.",
+      "country": "BRA",
+      "commodity": "SUGAR",
+      "riskScore": 52.4,
+      "ragStatus": "AMBER",
+      "topDriver": "concentration",
+      "dimensions": {
+        "concentration": 85.0,
+        "financial": 32.0,
+        "geopolitical": 38.8,
+        "climate": 45.9
+      },
+      "spendPct": 34.0,
+      "creditScore": 68,
+      "dpoTrend": "stable"
+    },
+    {
+      "id": "SUP-008",
+      "name": "Thailand Rice Exports Co.",
+      "country": "THA",
+      "commodity": "RICE",
+      "riskScore": 51.7,
+      "ragStatus": "AMBER",
+      "topDriver": "concentration",
+      "dimensions": {
+        "concentration": 87.5,
+        "financial": 27.0,
+        "geopolitical": 39.2,
+        "climate": 44.6
+      },
+      "spendPct": 35.0,
+      "creditScore": 73,
+      "dpoTrend": "stable"
+    },
+    {
+      "id": "SUP-011",
+      "name": "Ghana Farms Co-op",
+      "country": "GHA",
+      "commodity": "COCOA",
+      "riskScore": 49.1,
+      "ragStatus": "AMBER",
+      "topDriver": "concentration",
+      "dimensions": {
+        "concentration": 70.0,
+        "financial": 40.0,
+        "geopolitical": 26.8,
+        "climate": 56.8
+      },
+      "spendPct": 28.0,
+      "creditScore": 60,
+      "dpoTrend": "stable"
+    },
+    {
+      "id": "SUP-010",
+      "name": "Cerrado Soy Trading",
+      "country": "BRA",
+      "commodity": "SOYOIL",
+      "riskScore": 47.6,
+      "ragStatus": "AMBER",
+      "topDriver": "concentration",
+      "dimensions": {
+        "concentration": 67.5,
+        "financial": 34.0,
+        "geopolitical": 38.8,
+        "climate": 45.9
+      },
+      "spendPct": 27.0,
+      "creditScore": 66,
+      "dpoTrend": "stable"
+    },
+    {
+      "id": "SUP-006",
+      "name": "Andean Cotton Group",
+      "country": "COL",
+      "commodity": "COTTON",
+      "riskScore": 43.6,
+      "ragStatus": "AMBER",
+      "topDriver": "geopolitical",
+      "dimensions": {
+        "concentration": 37.5,
+        "financial": 36.0,
+        "geopolitical": 53.8,
+        "climate": 49.7
+      },
+      "spendPct": 15.0,
+      "creditScore": 64,
+      "dpoTrend": "stable"
+    },
+    {
+      "id": "SUP-012",
+      "name": "Pampa Wheat Exporters",
+      "country": "BRA",
+      "commodity": "WHEAT",
+      "riskScore": 40.9,
+      "ragStatus": "AMBER",
+      "topDriver": "concentration",
+      "dimensions": {
+        "concentration": 50.0,
+        "financial": 28.0,
+        "geopolitical": 38.8,
+        "climate": 45.9
+      },
+      "spendPct": 20.0,
+      "creditScore": 72,
+      "dpoTrend": "stable"
+    },
+    {
+      "id": "SUP-005",
+      "name": "Vietnam Coffee Consortium",
+      "country": "VNM",
+      "commodity": "COFFEE",
+      "riskScore": 39.5,
+      "ragStatus": "GREEN",
+      "topDriver": "concentration",
+      "dimensions": {
+        "concentration": 55.0,
+        "financial": 22.0,
+        "geopolitical": 29.6,
+        "climate": 50.4
+      },
+      "spendPct": 22.0,
+      "creditScore": 78,
+      "dpoTrend": "stable"
+    },
+    {
+      "id": "SUP-004",
+      "name": "Indoplant Resources",
+      "country": "IDN",
+      "commodity": "PALM",
+      "riskScore": 37.9,
+      "ragStatus": "GREEN",
+      "topDriver": "climate",
+      "dimensions": {
+        "concentration": 45.0,
+        "financial": 26.0,
+        "geopolitical": 32.4,
+        "climate": 48.8
+      },
+      "spendPct": 18.0,
+      "creditScore": 74,
+      "dpoTrend": "stable"
+    },
+    {
+      "id": "SUP-009",
+      "name": "Rhin Valley Aluminium NV",
+      "country": "NLD",
+      "commodity": "ALU",
+      "riskScore": 19.7,
+      "ragStatus": "GREEN",
+      "topDriver": "concentration",
+      "dimensions": {
+        "concentration": 30.0,
+        "financial": 12.0,
+        "geopolitical": 10.8,
+        "climate": 25.2
+      },
+      "spendPct": 12.0,
+      "creditScore": 88,
+      "dpoTrend": "stable"
+    }
+  ]
+}

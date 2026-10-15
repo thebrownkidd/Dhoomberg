@@ -1,0 +1,270 @@
+{
+ "asOf": "2026-10-13T12:23:13.561292+00:00",
+ "sources": {
+  "alphaVantage": false,
+  "cnbc": true,
+  "usda": true,
+  "eia": true
+ },
+ "items": [
+  {
+   "id": "0c9adee5880b",
+   "headline": "OPEC+ maintains output cuts through Q4 2026 amid demand concerns",
+   "summary": "The alliance agreed to hold existing production cuts in place, citing uncertainty around Chinese industrial demand recovery and US recession risk.",
+   "source": "Reuters (mock)",
+   "url": "",
+   "publishedAt": "2026-10-13T10:23:13.561292+00:00",
+   "commodities": [
+    "BRENT",
+    "WTI",
+    "DUBAI"
+   ],
+   "sentiment": "bearish",
+   "sentimentScore": -0.21,
+   "tags": [
+    "energy",
+    "opec"
+   ]
+  },
+  {
+   "id": "b4854b99c3b5",
+   "headline": "USDA WASDE: Global wheat ending stocks revised lower on Australian drought",
+   "summary": "August WASDE cut 2026/27 global wheat ending stocks by 4.2 Mt on reduced Australian crop estimates. Stocks-to-use ratio falls to 31.2%, a 9-year low.",
+   "source": "USDA NASS",
+   "url": "https://www.nass.usda.gov/",
+   "publishedAt": "2026-10-12T12:23:13.561292+00:00",
+   "commodities": [
+    "WHEAT",
+    "WHEAT_SRW"
+   ],
+   "sentiment": "bullish",
+   "sentimentScore": 0.34,
+   "tags": [
+    "agriculture",
+    "usda",
+    "wasde"
+   ]
+  },
+  {
+   "id": "d0ec38ac39ac",
+   "headline": "EIA: US crude inventories draw 4.2M bbl, fourth consecutive weekly decline",
+   "summary": "Commercial crude oil stocks fell to 428.5M barrels, the lowest since February. Refinery utilization rose to 93.2% on strong summer gasoline demand.",
+   "source": "EIA",
+   "url": "https://www.eia.gov/",
+   "publishedAt": "2026-10-12T07:23:13.561292+00:00",
+   "commodities": [
+    "BRENT",
+    "WTI"
+   ],
+   "sentiment": "bullish",
+   "sentimentScore": 0.28,
+   "tags": [
+    "energy",
+    "eia"
+   ]
+  },
+  {
+   "id": "1c2862b382b3",
+   "headline": "Gold climbs above $2,700 as dollar weakens on Fed rate cut expectations",
+   "summary": "Spot gold rose 1.2% to $2,718/oz as Federal Reserve minutes signalled openness to a 25bp cut in November.",
+   "source": "CNBC Commodities",
+   "url": "https://www.cnbc.com/",
+   "publishedAt": "2026-10-12T04:23:13.561292+00:00",
+   "commodities": [
+    "GOLD",
+    "SILVER"
+   ],
+   "sentiment": "bullish",
+   "sentimentScore": 0.42,
+   "tags": [
+    "metals",
+    "fed"
+   ]
+  },
+  {
+   "id": "1f572c1318c1",
+   "headline": "Copper slides on weak China manufacturing PMI; LME stocks at 3-month high",
+   "summary": "Caixin China Manufacturing PMI came in at 49.3 in September, missing expectations of 50.1. LME copper inventories rose 18,000t this week to 198,000t.",
+   "source": "CNBC Commodities",
+   "url": "https://www.cnbc.com/",
+   "publishedAt": "2026-10-11T11:23:13.561292+00:00",
+   "commodities": [
+    "COPPER",
+    "ALU",
+    "NICKEL",
+    "ZINC"
+   ],
+   "sentiment": "bearish",
+   "sentimentScore": -0.31,
+   "tags": [
+    "metals",
+    "china"
+   ]
+  },
+  {
+   "id": "4bfcddb556b7",
+   "headline": "Brazil sugar output accelerates; ICE raw sugar futures drop 2.3%",
+   "summary": "UNICA data showed Brazil Centre-South sugar production up 18% year-on-year in the first half of October.",
+   "source": "Reuters (mock)",
+   "url": "",
+   "publishedAt": "2026-10-11T06:23:13.561292+00:00",
+   "commodities": [
+    "SUGAR"
+   ],
+   "sentiment": "bearish",
+   "sentimentScore": -0.19,
+   "tags": [
+    "softs",
+    "brazil"
+   ]
+  },
+  {
+   "id": "9ec2fe041c67",
+   "headline": "European natural gas prices fall 4% on mild October weather forecast",
+   "summary": "TTF front-month dropped to EUR 38.2/MWh as extended 10-day forecasts for Western Europe showed above-normal temperatures through end-October.",
+   "source": "Reuters (mock)",
+   "url": "",
+   "publishedAt": "2026-10-10T12:23:13.561292+00:00",
+   "commodities": [
+    "NATGAS_EU",
+    "NATGAS_US",
+    "COAL_AU"
+   ],
+   "sentiment": "bearish",
+   "sentimentScore": -0.25,
+   "tags": [
+    "energy",
+    "europe"
+   ]
+  },
+  {
+   "id": "dd3c2541777c",
+   "headline": "India tenders for 1.5Mt urea imports ahead of Rabi season planting",
+   "summary": "India Potash Ltd launched a 1.5 million tonne urea import tender ahead of the October-November Rabi planting season.",
+   "source": "USDA NASS",
+   "url": "https://www.nass.usda.gov/",
+   "publishedAt": "2026-10-10T08:23:13.561292+00:00",
+   "commodities": [
+    "UREA",
+    "DAP",
+    "TSP"
+   ],
+   "sentiment": "bullish",
+   "sentimentScore": 0.22,
+   "tags": [
+    "fertilizer",
+    "india"
+   ]
+  },
+  {
+   "id": "679037a63a87",
+   "headline": "Indonesia palm oil export levy cut to boost shipments; Malaysia follows",
+   "summary": "Indonesia reduced its progressive export levy on crude palm oil by 15% effective November 1.",
+   "source": "Reuters (mock)",
+   "url": "",
+   "publishedAt": "2026-10-09T10:23:13.561292+00:00",
+   "commodities": [
+    "PALM",
+    "SOYOIL"
+   ],
+   "sentiment": "bearish",
+   "sentimentScore": -0.18,
+   "tags": [
+    "oilseeds",
+    "indonesia"
+   ]
+  },
+  {
+   "id": "4f91c8d0e685",
+   "headline": "Iron ore rebounds on China stimulus; steel mills restock ahead of Q4",
+   "summary": "SGX iron ore futures rose 3.1% after China announced infrastructure investment acceleration worth CNY 500bn.",
+   "source": "CNBC Commodities",
+   "url": "https://www.cnbc.com/",
+   "publishedAt": "2026-10-09T05:23:13.561292+00:00",
+   "commodities": [
+    "IRON",
+    "COPPER",
+    "COAL_AU"
+   ],
+   "sentiment": "bullish",
+   "sentimentScore": 0.38,
+   "tags": [
+    "metals",
+    "china"
+   ]
+  },
+  {
+   "id": "872d512bb5ea",
+   "headline": "Ghana cocoa output forecast cut 15% on Black Pod disease spread",
+   "summary": "Ghana's Cocobod revised its 2025/26 main crop estimate to 680,000t from 800,000t due to Black Pod disease.",
+   "source": "Reuters (mock)",
+   "url": "",
+   "publishedAt": "2026-10-08T11:23:13.561292+00:00",
+   "commodities": [
+    "COCOA"
+   ],
+   "sentiment": "bullish",
+   "sentimentScore": 0.29,
+   "tags": [
+    "softs",
+    "africa"
+   ]
+  },
+  {
+   "id": "e33917525443",
+   "headline": "USDA raises US corn ending stocks on improved yield estimates",
+   "summary": "USDA WASDE raised 2026/27 US corn ending stocks by 55 million bushels to 2.1 billion on higher trend yields in the Corn Belt.",
+   "source": "USDA NASS",
+   "url": "https://www.nass.usda.gov/",
+   "publishedAt": "2026-10-07T12:23:13.561292+00:00",
+   "commodities": [
+    "MAIZE",
+    "SOYBEANS",
+    "SOYMEAL"
+   ],
+   "sentiment": "bearish",
+   "sentimentScore": -0.14,
+   "tags": [
+    "agriculture",
+    "usda",
+    "wasde"
+   ]
+  },
+  {
+   "id": "1ab1d5f97591",
+   "headline": "Platinum deficit widens as EV catalyst demand surges; WPIC raises forecast",
+   "summary": "WPIC raised its 2026 platinum deficit forecast to 476koz on strong demand from hydrogen fuel cell vehicles.",
+   "source": "CNBC Commodities",
+   "url": "https://www.cnbc.com/",
+   "publishedAt": "2026-10-06T09:23:13.561292+00:00",
+   "commodities": [
+    "PLATINUM",
+    "SILVER"
+   ],
+   "sentiment": "bullish",
+   "sentimentScore": 0.45,
+   "tags": [
+    "metals",
+    "ev"
+   ]
+  },
+  {
+   "id": "42a7ccabfaea",
+   "headline": "Vietnam robusta crop estimate cut on drought; ICE Robusta near 5-year high",
+   "summary": "Vietnam 2025/26 robusta coffee output forecast at 28.5 million bags, down 8% from 2024/25 due to El Nino drought.",
+   "source": "Reuters (mock)",
+   "url": "",
+   "publishedAt": "2026-10-05T10:23:13.561292+00:00",
+   "commodities": [
+    "COFFEE_ROB",
+    "COFFEE"
+   ],
+   "sentiment": "bullish",
+   "sentimentScore": 0.31,
+   "tags": [
+    "softs",
+    "vietnam"
+   ]
+  }
+ ]
+}

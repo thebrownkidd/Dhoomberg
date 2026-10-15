@@ -1,0 +1,185 @@
+{
+  "model": "ML-09 Composite Shipment Risk + Forecast Signal",
+  "weights": {
+    "delay": 0.3,
+    "corridor": 0.25,
+    "carrier": 0.25,
+    "supplier": 0.2
+  },
+  "ml05Note": "Delay probability from cold-start lane baselines (Sea-Intelligence). Replace with ML-05 actuals once 200+ shipments/lane accumulate.",
+  "ml07Note": "Vessel behavioural risk not included: requires AIS subscription.",
+  "asOf": "2026-10-12",
+  "lanes": [
+    {
+      "lane": "UA-ODESA to TR-ISTANBUL",
+      "corridor": "BLACK_SEA",
+      "carrier": "ZIM",
+      "laneRiskScore": 60.5,
+      "ragStatus": "AMBER",
+      "riskTrend": "deteriorating",
+      "topDriver": "delay",
+      "forecastSignal": {
+        "action": "MONITOR",
+        "daysToAdd": 0
+      },
+      "componentScores": {
+        "delayProbability": 0.72,
+        "corridorThreatNorm": 0.5,
+        "carrierRisk": 0.48,
+        "supplierRiskNorm": 0.721
+      }
+    },
+    {
+      "lane": "IN-NHAVA SHEVA to NL-ROTTERDAM",
+      "corridor": "RED_SEA",
+      "carrier": "MSC",
+      "laneRiskScore": 49.3,
+      "ragStatus": "AMBER",
+      "riskTrend": "deteriorating",
+      "topDriver": "delay",
+      "forecastSignal": {
+        "action": "MONITOR",
+        "daysToAdd": 0
+      },
+      "componentScores": {
+        "delayProbability": 0.48,
+        "corridorThreatNorm": 0.5,
+        "carrierRisk": 0.42,
+        "supplierRiskNorm": 0.596
+      }
+    },
+    {
+      "lane": "IN-MUNDRA to DE-HAMBURG",
+      "corridor": "RED_SEA",
+      "carrier": "Hapag-Lloyd",
+      "laneRiskScore": 49.2,
+      "ragStatus": "AMBER",
+      "riskTrend": "deteriorating",
+      "topDriver": "delay",
+      "forecastSignal": {
+        "action": "MONITOR",
+        "daysToAdd": 0
+      },
+      "componentScores": {
+        "delayProbability": 0.51,
+        "corridorThreatNorm": 0.5,
+        "carrierRisk": 0.38,
+        "supplierRiskNorm": 0.596
+      }
+    },
+    {
+      "lane": "TH-LAEM CHABANG to NL-ROTTERDAM",
+      "corridor": "RED_SEA",
+      "carrier": "Evergreen",
+      "laneRiskScore": 47.8,
+      "ragStatus": "AMBER",
+      "riskTrend": "deteriorating",
+      "topDriver": "delay",
+      "forecastSignal": {
+        "action": "MONITOR",
+        "daysToAdd": 0
+      },
+      "componentScores": {
+        "delayProbability": 0.45,
+        "corridorThreatNorm": 0.5,
+        "carrierRisk": 0.46,
+        "supplierRiskNorm": 0.517
+      }
+    },
+    {
+      "lane": "ID-TANJUNG PRIOK to BE-ANTWERP",
+      "corridor": "STRAIT_MALACCA",
+      "carrier": "ONE",
+      "laneRiskScore": 38.7,
+      "ragStatus": "GREEN",
+      "riskTrend": "deteriorating",
+      "topDriver": "delay",
+      "forecastSignal": {
+        "action": "REDUCE_COVER",
+        "daysToAdd": -2
+      },
+      "componentScores": {
+        "delayProbability": 0.47,
+        "corridorThreatNorm": 0.25,
+        "carrierRisk": 0.43,
+        "supplierRiskNorm": 0.379
+      }
+    },
+    {
+      "lane": "CI-ABIDJAN to NL-ROTTERDAM",
+      "corridor": "CAPE_GOOD_HOPE",
+      "carrier": "HMM",
+      "laneRiskScore": 37.0,
+      "ragStatus": "GREEN",
+      "riskTrend": "stable",
+      "topDriver": "supplier",
+      "forecastSignal": {
+        "action": "REDUCE_COVER",
+        "daysToAdd": -2
+      },
+      "componentScores": {
+        "delayProbability": 0.44,
+        "corridorThreatNorm": 0.0,
+        "carrierRisk": 0.41,
+        "supplierRiskNorm": 0.678
+      }
+    },
+    {
+      "lane": "VN-HO CHI MINH to NL-ROTTERDAM",
+      "corridor": "STRAIT_MALACCA",
+      "carrier": "COSCO",
+      "laneRiskScore": 36.8,
+      "ragStatus": "GREEN",
+      "riskTrend": "deteriorating",
+      "topDriver": "delay",
+      "forecastSignal": {
+        "action": "REDUCE_COVER",
+        "daysToAdd": -2
+      },
+      "componentScores": {
+        "delayProbability": 0.43,
+        "corridorThreatNorm": 0.25,
+        "carrierRisk": 0.39,
+        "supplierRiskNorm": 0.395
+      }
+    },
+    {
+      "lane": "BR-SANTOS to NL-ROTTERDAM",
+      "corridor": "CAPE_GOOD_HOPE",
+      "carrier": "CMA CGM",
+      "laneRiskScore": 32.0,
+      "ragStatus": "GREEN",
+      "riskTrend": "stable",
+      "topDriver": "delay",
+      "forecastSignal": {
+        "action": "REDUCE_COVER",
+        "daysToAdd": -2
+      },
+      "componentScores": {
+        "delayProbability": 0.38,
+        "corridorThreatNorm": 0.0,
+        "carrierRisk": 0.45,
+        "supplierRiskNorm": 0.47
+      }
+    },
+    {
+      "lane": "CO-CARTAGENA to DE-HAMBURG",
+      "corridor": "PANAMA_CANAL",
+      "carrier": "Maersk",
+      "laneRiskScore": 29.2,
+      "ragStatus": "GREEN",
+      "riskTrend": "stable",
+      "topDriver": "delay",
+      "forecastSignal": {
+        "action": "REDUCE_COVER",
+        "daysToAdd": -2
+      },
+      "componentScores": {
+        "delayProbability": 0.39,
+        "corridorThreatNorm": 0.0,
+        "carrierRisk": 0.35,
+        "supplierRiskNorm": 0.436
+      }
+    }
+  ]
+}

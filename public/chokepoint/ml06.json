@@ -1,0 +1,173 @@
+{
+  "model": "ML-06 Corridor Threat Scoring (weighted rule-based)",
+  "weights": {
+    "incidents": 0.35,
+    "advisory": 0.25,
+    "baseRisk": 0.15,
+    "constraint": 0.25
+  },
+  "scale": 4.5,
+  "asOf": "2026-10-12",
+  "calibration": {
+    "events": 6,
+    "crisisPass": "3/4",
+    "normalPass": "2/2",
+    "status": "PASS"
+  },
+  "chokepoints": {
+    "RED_SEA": {
+      "name": "Red Sea / Bab el-Mandeb",
+      "transitVolume": "12% global trade",
+      "threatScore": 2.9,
+      "threatLevel": 3,
+      "advisory": "HIGH",
+      "incidents30d": 3,
+      "primaryDriver": "houthi_operations_reduced",
+      "lastIncident": "2026-10-08",
+      "vesselFlowVsAvg": 0.72,
+      "transitIndexVsAvg": 1.18,
+      "queueVessels": 8,
+      "rerouteVia": "Cape of Good Hope",
+      "rerouteUsdTeu": 800,
+      "rerouteDays": 14,
+      "scoreComponents": {
+        "incidents": 0.105,
+        "advisory": 0.175,
+        "baseRisk": 0.105,
+        "constraint": 0.037
+      }
+    },
+    "STRAIT_HORMUZ": {
+      "name": "Strait of Hormuz",
+      "transitVolume": "21% global oil",
+      "threatScore": 1.75,
+      "threatLevel": 2,
+      "advisory": "LOW",
+      "incidents30d": 1,
+      "primaryDriver": "routine_patrol_incidents",
+      "lastIncident": "2026-09-22",
+      "vesselFlowVsAvg": 0.95,
+      "transitIndexVsAvg": 1.02,
+      "queueVessels": 3,
+      "rerouteVia": "Saudi East-West pipeline (crude only)",
+      "rerouteUsdTeu": null,
+      "rerouteDays": null,
+      "scoreComponents": {
+        "incidents": 0.035,
+        "advisory": 0.05,
+        "baseRisk": 0.083,
+        "constraint": 0.0
+      }
+    },
+    "STRAIT_MALACCA": {
+      "name": "Strait of Malacca",
+      "transitVolume": "25% global trade",
+      "threatScore": 1.78,
+      "threatLevel": 2,
+      "advisory": "LOW",
+      "incidents30d": 2,
+      "primaryDriver": "petty_piracy",
+      "lastIncident": "2026-10-01",
+      "vesselFlowVsAvg": 0.98,
+      "transitIndexVsAvg": 1.0,
+      "queueVessels": 0,
+      "rerouteVia": "Lombok Strait",
+      "rerouteUsdTeu": 400,
+      "rerouteDays": 5,
+      "scoreComponents": {
+        "incidents": 0.07,
+        "advisory": 0.05,
+        "baseRisk": 0.052,
+        "constraint": 0.0
+      }
+    },
+    "PANAMA_CANAL": {
+      "name": "Panama Canal",
+      "transitVolume": "5% global trade",
+      "threatScore": 1.33,
+      "threatLevel": 1,
+      "advisory": "NONE",
+      "incidents30d": 0,
+      "primaryDriver": "capacity_normalising",
+      "lastIncident": "N/A",
+      "vesselFlowVsAvg": 0.94,
+      "transitIndexVsAvg": 1.05,
+      "queueVessels": 4,
+      "rerouteVia": "Cape Horn",
+      "rerouteUsdTeu": 600,
+      "rerouteDays": 21,
+      "scoreComponents": {
+        "incidents": 0.0,
+        "advisory": 0.0,
+        "baseRisk": 0.06,
+        "constraint": 0.013
+      }
+    },
+    "BLACK_SEA": {
+      "name": "Black Sea / Turkish Straits",
+      "transitVolume": "Ukrainian grain corridor",
+      "threatScore": 2.65,
+      "threatLevel": 3,
+      "advisory": "MODERATE",
+      "incidents30d": 5,
+      "primaryDriver": "ukraine_conflict_ongoing",
+      "lastIncident": "2026-10-09",
+      "vesselFlowVsAvg": 0.68,
+      "transitIndexVsAvg": 1.22,
+      "queueVessels": 12,
+      "rerouteVia": "Overland rail / Danube",
+      "rerouteUsdTeu": 350,
+      "rerouteDays": 10,
+      "scoreComponents": {
+        "incidents": 0.175,
+        "advisory": 0.1,
+        "baseRisk": 0.03,
+        "constraint": 0.062
+      }
+    },
+    "CAPE_GOOD_HOPE": {
+      "name": "Cape of Good Hope",
+      "transitVolume": "Reroute corridor (Red Sea detour)",
+      "threatScore": 1.07,
+      "threatLevel": 1,
+      "advisory": "NONE",
+      "incidents30d": 0,
+      "primaryDriver": "none",
+      "lastIncident": "N/A",
+      "vesselFlowVsAvg": 1.35,
+      "transitIndexVsAvg": 0.98,
+      "queueVessels": 0,
+      "rerouteVia": null,
+      "rerouteUsdTeu": null,
+      "rerouteDays": null,
+      "scoreComponents": {
+        "incidents": 0.0,
+        "advisory": 0.0,
+        "baseRisk": 0.015,
+        "constraint": 0.0
+      }
+    },
+    "DOVER_STRAIT": {
+      "name": "Dover Strait / English Channel",
+      "transitVolume": "520 ships/day",
+      "threatScore": 1.03,
+      "threatLevel": 1,
+      "advisory": "NONE",
+      "incidents30d": 0,
+      "primaryDriver": "none",
+      "lastIncident": "N/A",
+      "vesselFlowVsAvg": 0.99,
+      "transitIndexVsAvg": 1.01,
+      "queueVessels": 0,
+      "rerouteVia": "North Sea (Scotland)",
+      "rerouteUsdTeu": 200,
+      "rerouteDays": 2,
+      "scoreComponents": {
+        "incidents": 0.0,
+        "advisory": 0.0,
+        "baseRisk": 0.007,
+        "constraint": 0.0
+      }
+    }
+  }
+}

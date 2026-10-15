@@ -1,0 +1,1937 @@
+{
+  "model": "ML-04 Leading Indicators (Granger causality + OOS correlation)",
+  "discoveryPeriod": "2000-01 to 2018-12",
+  "oosPeriod": "2019-01 to 2026-09",
+  "bonferroniAlpha": 0.0083,
+  "oosCorrMin": 0.15,
+  "commodities": {
+    "BRENT": {
+      "series": "Crude oil, Brent",
+      "unit": "$/bbl",
+      "nPass": 2,
+      "indicators": [
+        {
+          "indicator": "fgap",
+          "name": "Futures nowcast gap",
+          "description": "End-of-month futures close minus monthly average. Converts stale monthly-avg prices into a timely correction.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.672,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.571,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        },
+        {
+          "indicator": "fr1",
+          "name": "Futures return",
+          "description": "Month-end futures log return. Captures momentum in forward prices.",
+          "lagMonths": 4,
+          "discoveryCorr": -0.019,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": -0.251,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "negative"
+        },
+        {
+          "indicator": "xs_r1",
+          "name": "Cross-commodity momentum",
+          "description": "Average return of all other tracked commodities. Measures broad macro sentiment.",
+          "lagMonths": 6,
+          "discoveryCorr": -0.06,
+          "grangerP": 0.0014,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.061,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        }
+      ]
+    },
+    "WTI": {
+      "series": "Crude oil, WTI",
+      "unit": "$/bbl",
+      "nPass": 2,
+      "indicators": [
+        {
+          "indicator": "fgap",
+          "name": "Futures nowcast gap",
+          "description": "End-of-month futures close minus monthly average. Converts stale monthly-avg prices into a timely correction.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.677,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.678,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        },
+        {
+          "indicator": "fr1",
+          "name": "Futures return",
+          "description": "Month-end futures log return. Captures momentum in forward prices.",
+          "lagMonths": 4,
+          "discoveryCorr": -0.041,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": -0.248,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "negative"
+        },
+        {
+          "indicator": "xs_r1",
+          "name": "Cross-commodity momentum",
+          "description": "Average return of all other tracked commodities. Measures broad macro sentiment.",
+          "lagMonths": 6,
+          "discoveryCorr": -0.059,
+          "grangerP": 0.0065,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.054,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        }
+      ]
+    },
+    "DUBAI": {
+      "series": "Crude oil, Dubai",
+      "unit": "$/bbl",
+      "nPass": 0,
+      "indicators": [
+        {
+          "indicator": "xs_r1",
+          "name": "Cross-commodity momentum",
+          "description": "Average return of all other tracked commodities. Measures broad macro sentiment.",
+          "lagMonths": 6,
+          "discoveryCorr": -0.064,
+          "grangerP": 0.0046,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.08,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        }
+      ]
+    },
+    "COAL_AU": {
+      "series": "Coal, Australian",
+      "unit": "$/mt",
+      "nPass": 1,
+      "indicators": [
+        {
+          "indicator": "xs_r1",
+          "name": "Cross-commodity momentum",
+          "description": "Average return of all other tracked commodities. Measures broad macro sentiment.",
+          "lagMonths": 3,
+          "discoveryCorr": 0.238,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.185,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        },
+        {
+          "indicator": "natgas",
+          "name": "Natural gas return",
+          "description": "Log return of US Henry Hub gas. Affects fertiliser (urea) and processing costs.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.115,
+          "grangerP": 0.0574,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.188,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        },
+        {
+          "indicator": "brent",
+          "name": "Brent crude return",
+          "description": "Log return of Brent crude. Energy is an input cost for food and freight.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.141,
+          "grangerP": 0.0611,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.148,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        },
+        {
+          "indicator": "urea",
+          "name": "Urea return",
+          "description": "Log return of urea (fertiliser). Leading cost input for grains.",
+          "lagMonths": 3,
+          "discoveryCorr": 0.126,
+          "grangerP": 0.0887,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.143,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        }
+      ]
+    },
+    "NATGAS_US": {
+      "series": "Natural gas, US",
+      "unit": "$/mmbtu",
+      "nPass": 1,
+      "indicators": [
+        {
+          "indicator": "fgap",
+          "name": "Futures nowcast gap",
+          "description": "End-of-month futures close minus monthly average. Converts stale monthly-avg prices into a timely correction.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.624,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.435,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        },
+        {
+          "indicator": "xs_r1",
+          "name": "Cross-commodity momentum",
+          "description": "Average return of all other tracked commodities. Measures broad macro sentiment.",
+          "lagMonths": 3,
+          "discoveryCorr": 0.116,
+          "grangerP": 0.0123,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.121,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        },
+        {
+          "indicator": "brent",
+          "name": "Brent crude return",
+          "description": "Log return of Brent crude. Energy is an input cost for food and freight.",
+          "lagMonths": 3,
+          "discoveryCorr": 0.097,
+          "grangerP": 0.0003,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.056,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        },
+        {
+          "indicator": "fr1",
+          "name": "Futures return",
+          "description": "Month-end futures log return. Captures momentum in forward prices.",
+          "lagMonths": 3,
+          "discoveryCorr": 0.076,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.041,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        }
+      ]
+    },
+    "NATGAS_EU": {
+      "series": "Natural gas, Europe",
+      "unit": "$/mmbtu",
+      "nPass": 0,
+      "indicators": [
+        {
+          "indicator": "xs_r1",
+          "name": "Cross-commodity momentum",
+          "description": "Average return of all other tracked commodities. Measures broad macro sentiment.",
+          "lagMonths": 6,
+          "discoveryCorr": 0.237,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.116,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        },
+        {
+          "indicator": "urea",
+          "name": "Urea return",
+          "description": "Log return of urea (fertiliser). Leading cost input for grains.",
+          "lagMonths": 2,
+          "discoveryCorr": 0.127,
+          "grangerP": 0.0237,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.105,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        },
+        {
+          "indicator": "brent",
+          "name": "Brent crude return",
+          "description": "Log return of Brent crude. Energy is an input cost for food and freight.",
+          "lagMonths": 6,
+          "discoveryCorr": 0.203,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.099,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        },
+        {
+          "indicator": "natgas",
+          "name": "Natural gas return",
+          "description": "Log return of US Henry Hub gas. Affects fertiliser (urea) and processing costs.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.163,
+          "grangerP": 0.0006,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.059,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        }
+      ]
+    },
+    "PALM": {
+      "series": "Palm oil",
+      "unit": "$/mt",
+      "nPass": 2,
+      "indicators": [
+        {
+          "indicator": "fgap",
+          "name": "Futures nowcast gap",
+          "description": "End-of-month futures close minus monthly average. Converts stale monthly-avg prices into a timely correction.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.51,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.417,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        },
+        {
+          "indicator": "fr1",
+          "name": "Futures return",
+          "description": "Month-end futures log return. Captures momentum in forward prices.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.531,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.408,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        },
+        {
+          "indicator": "xs_r1",
+          "name": "Cross-commodity momentum",
+          "description": "Average return of all other tracked commodities. Measures broad macro sentiment.",
+          "lagMonths": 2,
+          "discoveryCorr": 0.053,
+          "grangerP": 0.0381,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.143,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        },
+        {
+          "indicator": "brent",
+          "name": "Brent crude return",
+          "description": "Log return of Brent crude. Energy is an input cost for food and freight.",
+          "lagMonths": 6,
+          "discoveryCorr": -0.1,
+          "grangerP": 0.0345,
+          "grangerThreshold": 0.0083,
+          "oosCorr": -0.009,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "negative"
+        }
+      ]
+    },
+    "SOYOIL": {
+      "series": "Soybean oil",
+      "unit": "$/mt",
+      "nPass": 2,
+      "indicators": [
+        {
+          "indicator": "fgap",
+          "name": "Futures nowcast gap",
+          "description": "End-of-month futures close minus monthly average. Converts stale monthly-avg prices into a timely correction.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.527,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.614,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        },
+        {
+          "indicator": "xs_r1",
+          "name": "Cross-commodity momentum",
+          "description": "Average return of all other tracked commodities. Measures broad macro sentiment.",
+          "lagMonths": 2,
+          "discoveryCorr": 0.188,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.216,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        },
+        {
+          "indicator": "fr1",
+          "name": "Futures return",
+          "description": "Month-end futures log return. Captures momentum in forward prices.",
+          "lagMonths": 2,
+          "discoveryCorr": 0.095,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.064,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        },
+        {
+          "indicator": "brent",
+          "name": "Brent crude return",
+          "description": "Log return of Brent crude. Energy is an input cost for food and freight.",
+          "lagMonths": 3,
+          "discoveryCorr": -0.011,
+          "grangerP": 0.0036,
+          "grangerThreshold": 0.0083,
+          "oosCorr": -0.019,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "negative"
+        }
+      ]
+    },
+    "SOYBEANS": {
+      "series": "Soybeans",
+      "unit": "$/mt",
+      "nPass": 2,
+      "indicators": [
+        {
+          "indicator": "fgap",
+          "name": "Futures nowcast gap",
+          "description": "End-of-month futures close minus monthly average. Converts stale monthly-avg prices into a timely correction.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.517,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.715,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        },
+        {
+          "indicator": "fr1",
+          "name": "Futures return",
+          "description": "Month-end futures log return. Captures momentum in forward prices.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.501,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.672,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        },
+        {
+          "indicator": "xs_r1",
+          "name": "Cross-commodity momentum",
+          "description": "Average return of all other tracked commodities. Measures broad macro sentiment.",
+          "lagMonths": 4,
+          "discoveryCorr": -0.001,
+          "grangerP": 0.0015,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.041,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        },
+        {
+          "indicator": "brent",
+          "name": "Brent crude return",
+          "description": "Log return of Brent crude. Energy is an input cost for food and freight.",
+          "lagMonths": 2,
+          "discoveryCorr": 0.106,
+          "grangerP": 0.0328,
+          "grangerThreshold": 0.0083,
+          "oosCorr": -0.015,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "negative"
+        }
+      ]
+    },
+    "SOYMEAL": {
+      "series": "Soybean meal",
+      "unit": "$/mt",
+      "nPass": 2,
+      "indicators": [
+        {
+          "indicator": "fr1",
+          "name": "Futures return",
+          "description": "Month-end futures log return. Captures momentum in forward prices.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.489,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.595,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        },
+        {
+          "indicator": "fgap",
+          "name": "Futures nowcast gap",
+          "description": "End-of-month futures close minus monthly average. Converts stale monthly-avg prices into a timely correction.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.493,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.582,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        }
+      ]
+    },
+    "COCONUT": {
+      "series": "Coconut oil",
+      "unit": "$/mt",
+      "nPass": 0,
+      "indicators": [
+        {
+          "indicator": "xs_r1",
+          "name": "Cross-commodity momentum",
+          "description": "Average return of all other tracked commodities. Measures broad macro sentiment.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.179,
+          "grangerP": 0.0419,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.085,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        },
+        {
+          "indicator": "brent",
+          "name": "Brent crude return",
+          "description": "Log return of Brent crude. Energy is an input cost for food and freight.",
+          "lagMonths": 6,
+          "discoveryCorr": -0.138,
+          "grangerP": 0.0082,
+          "grangerThreshold": 0.0083,
+          "oosCorr": -0.03,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "negative"
+        }
+      ]
+    },
+    "GNUT_OIL": {
+      "series": "Groundnut oil",
+      "unit": "$/mt",
+      "nPass": 0,
+      "indicators": [
+        {
+          "indicator": "xs_r1",
+          "name": "Cross-commodity momentum",
+          "description": "Average return of all other tracked commodities. Measures broad macro sentiment.",
+          "lagMonths": 3,
+          "discoveryCorr": 0.174,
+          "grangerP": 0.0116,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.094,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        }
+      ]
+    },
+    "WHEAT": {
+      "series": "Wheat, US HRW",
+      "unit": "$/mt",
+      "nPass": 2,
+      "indicators": [
+        {
+          "indicator": "fgap",
+          "name": "Futures nowcast gap",
+          "description": "End-of-month futures close minus monthly average. Converts stale monthly-avg prices into a timely correction.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.575,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.697,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        },
+        {
+          "indicator": "fr1",
+          "name": "Futures return",
+          "description": "Month-end futures log return. Captures momentum in forward prices.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.506,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.548,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        }
+      ]
+    },
+    "WHEAT_SRW": {
+      "series": "Wheat, US SRW",
+      "unit": "$/mt",
+      "nPass": 2,
+      "indicators": [
+        {
+          "indicator": "fgap",
+          "name": "Futures nowcast gap",
+          "description": "End-of-month futures close minus monthly average. Converts stale monthly-avg prices into a timely correction.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.609,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.542,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        },
+        {
+          "indicator": "fr1",
+          "name": "Futures return",
+          "description": "Month-end futures log return. Captures momentum in forward prices.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.498,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.419,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        }
+      ]
+    },
+    "MAIZE": {
+      "series": "Maize",
+      "unit": "$/mt",
+      "nPass": 2,
+      "indicators": [
+        {
+          "indicator": "fgap",
+          "name": "Futures nowcast gap",
+          "description": "End-of-month futures close minus monthly average. Converts stale monthly-avg prices into a timely correction.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.613,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.749,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        },
+        {
+          "indicator": "xs_r1",
+          "name": "Cross-commodity momentum",
+          "description": "Average return of all other tracked commodities. Measures broad macro sentiment.",
+          "lagMonths": 2,
+          "discoveryCorr": 0.179,
+          "grangerP": 0.0061,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.266,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        },
+        {
+          "indicator": "fr1",
+          "name": "Futures return",
+          "description": "Month-end futures log return. Captures momentum in forward prices.",
+          "lagMonths": 2,
+          "discoveryCorr": 0.025,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.092,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        }
+      ]
+    },
+    "RICE": {
+      "series": "Rice, Thai 5%",
+      "unit": "$/mt",
+      "nPass": 0,
+      "indicators": [
+        {
+          "indicator": "fgap",
+          "name": "Futures nowcast gap",
+          "description": "End-of-month futures close minus monthly average. Converts stale monthly-avg prices into a timely correction.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.213,
+          "grangerP": 0.0008,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.129,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        },
+        {
+          "indicator": "fr1",
+          "name": "Futures return",
+          "description": "Month-end futures log return. Captures momentum in forward prices.",
+          "lagMonths": 2,
+          "discoveryCorr": 0.128,
+          "grangerP": 0.004,
+          "grangerThreshold": 0.0083,
+          "oosCorr": -0.082,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "negative"
+        },
+        {
+          "indicator": "xs_r1",
+          "name": "Cross-commodity momentum",
+          "description": "Average return of all other tracked commodities. Measures broad macro sentiment.",
+          "lagMonths": 5,
+          "discoveryCorr": 0.092,
+          "grangerP": 0.0012,
+          "grangerThreshold": 0.0083,
+          "oosCorr": -0.06,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "negative"
+        },
+        {
+          "indicator": "urea",
+          "name": "Urea return",
+          "description": "Log return of urea (fertiliser). Leading cost input for grains.",
+          "lagMonths": 5,
+          "discoveryCorr": 0.121,
+          "grangerP": 0.0886,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.01,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        }
+      ]
+    },
+    "SUGAR": {
+      "series": "Sugar, world",
+      "unit": "$/kg",
+      "nPass": 0,
+      "indicators": [
+        {
+          "indicator": "fr1",
+          "name": "Futures return",
+          "description": "Month-end futures log return. Captures momentum in forward prices.",
+          "lagMonths": 2,
+          "discoveryCorr": 0.036,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": -0.127,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "negative"
+        },
+        {
+          "indicator": "fgap",
+          "name": "Futures nowcast gap",
+          "description": "End-of-month futures close minus monthly average. Converts stale monthly-avg prices into a timely correction.",
+          "lagMonths": 3,
+          "discoveryCorr": -0.037,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": -0.008,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "negative"
+        },
+        {
+          "indicator": "brent",
+          "name": "Brent crude return",
+          "description": "Log return of Brent crude. Energy is an input cost for food and freight.",
+          "lagMonths": 2,
+          "discoveryCorr": 0.057,
+          "grangerP": 0.0796,
+          "grangerThreshold": 0.0083,
+          "oosCorr": -0.002,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "negative"
+        }
+      ]
+    },
+    "SUGAR_US": {
+      "series": "Sugar, US",
+      "unit": "$/kg",
+      "nPass": 0,
+      "indicators": [
+        {
+          "indicator": "xs_r1",
+          "name": "Cross-commodity momentum",
+          "description": "Average return of all other tracked commodities. Measures broad macro sentiment.",
+          "lagMonths": 5,
+          "discoveryCorr": -0.06,
+          "grangerP": 0.0128,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.119,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        }
+      ]
+    },
+    "COCOA": {
+      "series": "Cocoa",
+      "unit": "$/kg",
+      "nPass": 1,
+      "indicators": [
+        {
+          "indicator": "fgap",
+          "name": "Futures nowcast gap",
+          "description": "End-of-month futures close minus monthly average. Converts stale monthly-avg prices into a timely correction.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.528,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.677,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        },
+        {
+          "indicator": "fr1",
+          "name": "Futures return",
+          "description": "Month-end futures log return. Captures momentum in forward prices.",
+          "lagMonths": 2,
+          "discoveryCorr": -0.066,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.011,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        }
+      ]
+    },
+    "COFFEE": {
+      "series": "Coffee, Arabica",
+      "unit": "$/kg",
+      "nPass": 1,
+      "indicators": [
+        {
+          "indicator": "fgap",
+          "name": "Futures nowcast gap",
+          "description": "End-of-month futures close minus monthly average. Converts stale monthly-avg prices into a timely correction.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.61,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.689,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        },
+        {
+          "indicator": "brent",
+          "name": "Brent crude return",
+          "description": "Log return of Brent crude. Energy is an input cost for food and freight.",
+          "lagMonths": 4,
+          "discoveryCorr": 0.096,
+          "grangerP": 0.0967,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.044,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        },
+        {
+          "indicator": "urea",
+          "name": "Urea return",
+          "description": "Log return of urea (fertiliser). Leading cost input for grains.",
+          "lagMonths": 2,
+          "discoveryCorr": 0.095,
+          "grangerP": 0.0987,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.031,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        },
+        {
+          "indicator": "fr1",
+          "name": "Futures return",
+          "description": "Month-end futures log return. Captures momentum in forward prices.",
+          "lagMonths": 2,
+          "discoveryCorr": -0.026,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": -0.026,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "negative"
+        }
+      ]
+    },
+    "COFFEE_ROB": {
+      "series": "Coffee, Robusta",
+      "unit": "$/kg",
+      "nPass": 0,
+      "indicators": [
+        {
+          "indicator": "xs_r1",
+          "name": "Cross-commodity momentum",
+          "description": "Average return of all other tracked commodities. Measures broad macro sentiment.",
+          "lagMonths": 5,
+          "discoveryCorr": 0.013,
+          "grangerP": 0.0921,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.042,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        }
+      ]
+    },
+    "COTTON": {
+      "series": "Cotton, A Index",
+      "unit": "$/kg",
+      "nPass": 2,
+      "indicators": [
+        {
+          "indicator": "fgap",
+          "name": "Futures nowcast gap",
+          "description": "End-of-month futures close minus monthly average. Converts stale monthly-avg prices into a timely correction.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.639,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.659,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        },
+        {
+          "indicator": "fr1",
+          "name": "Futures return",
+          "description": "Month-end futures log return. Captures momentum in forward prices.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.626,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.625,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        },
+        {
+          "indicator": "xs_r1",
+          "name": "Cross-commodity momentum",
+          "description": "Average return of all other tracked commodities. Measures broad macro sentiment.",
+          "lagMonths": 5,
+          "discoveryCorr": -0.02,
+          "grangerP": 0.0028,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.142,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        },
+        {
+          "indicator": "natgas",
+          "name": "Natural gas return",
+          "description": "Log return of US Henry Hub gas. Affects fertiliser (urea) and processing costs.",
+          "lagMonths": 6,
+          "discoveryCorr": -0.098,
+          "grangerP": 0.0484,
+          "grangerThreshold": 0.0083,
+          "oosCorr": -0.047,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "negative"
+        }
+      ]
+    },
+    "RUBBER": {
+      "series": "Rubber, RSS3",
+      "unit": "$/kg",
+      "nPass": 0,
+      "indicators": [
+        {
+          "indicator": "brent",
+          "name": "Brent crude return",
+          "description": "Log return of Brent crude. Energy is an input cost for food and freight.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.15,
+          "grangerP": 0.0793,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.203,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        },
+        {
+          "indicator": "xs_r1",
+          "name": "Cross-commodity momentum",
+          "description": "Average return of all other tracked commodities. Measures broad macro sentiment.",
+          "lagMonths": 2,
+          "discoveryCorr": 0.231,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.112,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        },
+        {
+          "indicator": "urea",
+          "name": "Urea return",
+          "description": "Log return of urea (fertiliser). Leading cost input for grains.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.159,
+          "grangerP": 0.0058,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.027,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        }
+      ]
+    },
+    "BEEF": {
+      "series": "Beef",
+      "unit": "$/kg",
+      "nPass": 0,
+      "indicators": [
+        {
+          "indicator": "xs_r1",
+          "name": "Cross-commodity momentum",
+          "description": "Average return of all other tracked commodities. Measures broad macro sentiment.",
+          "lagMonths": 2,
+          "discoveryCorr": 0.181,
+          "grangerP": 0.0018,
+          "grangerThreshold": 0.0083,
+          "oosCorr": -0.087,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "negative"
+        },
+        {
+          "indicator": "brent",
+          "name": "Brent crude return",
+          "description": "Log return of Brent crude. Energy is an input cost for food and freight.",
+          "lagMonths": 4,
+          "discoveryCorr": 0.08,
+          "grangerP": 0.0757,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.013,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        }
+      ]
+    },
+    "CHICKEN": {
+      "series": "Chicken",
+      "unit": "$/kg",
+      "nPass": 0,
+      "indicators": [
+        {
+          "indicator": "urea",
+          "name": "Urea return",
+          "description": "Log return of urea (fertiliser). Leading cost input for grains.",
+          "lagMonths": 6,
+          "discoveryCorr": 0.046,
+          "grangerP": 0.0148,
+          "grangerThreshold": 0.0083,
+          "oosCorr": -0.031,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "negative"
+        }
+      ]
+    },
+    "FISHMEAL": {
+      "series": "Fish meal",
+      "unit": "$/mt",
+      "nPass": 0,
+      "indicators": []
+    },
+    "DAP": {
+      "series": "DAP",
+      "unit": "$/mt",
+      "nPass": 1,
+      "indicators": [
+        {
+          "indicator": "xs_r1",
+          "name": "Cross-commodity momentum",
+          "description": "Average return of all other tracked commodities. Measures broad macro sentiment.",
+          "lagMonths": 4,
+          "discoveryCorr": 0.175,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.182,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        },
+        {
+          "indicator": "brent",
+          "name": "Brent crude return",
+          "description": "Log return of Brent crude. Energy is an input cost for food and freight.",
+          "lagMonths": 2,
+          "discoveryCorr": 0.124,
+          "grangerP": 0.0247,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.283,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        },
+        {
+          "indicator": "natgas",
+          "name": "Natural gas return",
+          "description": "Log return of US Henry Hub gas. Affects fertiliser (urea) and processing costs.",
+          "lagMonths": 3,
+          "discoveryCorr": 0.125,
+          "grangerP": 0.0031,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.011,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        },
+        {
+          "indicator": "urea",
+          "name": "Urea return",
+          "description": "Log return of urea (fertiliser). Leading cost input for grains.",
+          "lagMonths": 2,
+          "discoveryCorr": 0.199,
+          "grangerP": 0.0002,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.006,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        }
+      ]
+    },
+    "TSP": {
+      "series": "TSP",
+      "unit": "$/mt",
+      "nPass": 3,
+      "indicators": [
+        {
+          "indicator": "urea",
+          "name": "Urea return",
+          "description": "Log return of urea (fertiliser). Leading cost input for grains.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.241,
+          "grangerP": 0.0005,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.295,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        },
+        {
+          "indicator": "brent",
+          "name": "Brent crude return",
+          "description": "Log return of Brent crude. Energy is an input cost for food and freight.",
+          "lagMonths": 2,
+          "discoveryCorr": 0.212,
+          "grangerP": 0.0004,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.28,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        },
+        {
+          "indicator": "xs_r1",
+          "name": "Cross-commodity momentum",
+          "description": "Average return of all other tracked commodities. Measures broad macro sentiment.",
+          "lagMonths": 2,
+          "discoveryCorr": 0.391,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.21,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        },
+        {
+          "indicator": "natgas",
+          "name": "Natural gas return",
+          "description": "Log return of US Henry Hub gas. Affects fertiliser (urea) and processing costs.",
+          "lagMonths": 6,
+          "discoveryCorr": -0.103,
+          "grangerP": 0.0013,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.135,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        }
+      ]
+    },
+    "UREA": {
+      "series": "Urea",
+      "unit": "$/mt",
+      "nPass": 0,
+      "indicators": [
+        {
+          "indicator": "natgas",
+          "name": "Natural gas return",
+          "description": "Log return of US Henry Hub gas. Affects fertiliser (urea) and processing costs.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.092,
+          "grangerP": 0.0475,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.133,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        },
+        {
+          "indicator": "xs_r1",
+          "name": "Cross-commodity momentum",
+          "description": "Average return of all other tracked commodities. Measures broad macro sentiment.",
+          "lagMonths": 2,
+          "discoveryCorr": 0.234,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.055,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        },
+        {
+          "indicator": "brent",
+          "name": "Brent crude return",
+          "description": "Log return of Brent crude. Energy is an input cost for food and freight.",
+          "lagMonths": 2,
+          "discoveryCorr": 0.143,
+          "grangerP": 0.0031,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.049,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        }
+      ]
+    },
+    "POTASH": {
+      "series": "Potassium chloride",
+      "unit": "$/mt",
+      "nPass": 0,
+      "indicators": [
+        {
+          "indicator": "xs_r1",
+          "name": "Cross-commodity momentum",
+          "description": "Average return of all other tracked commodities. Measures broad macro sentiment.",
+          "lagMonths": 6,
+          "discoveryCorr": 0.07,
+          "grangerP": 0.0327,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.179,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        }
+      ]
+    },
+    "PHOSPHATE": {
+      "series": "Phosphate rock",
+      "unit": "$/mt",
+      "nPass": 1,
+      "indicators": [
+        {
+          "indicator": "xs_r1",
+          "name": "Cross-commodity momentum",
+          "description": "Average return of all other tracked commodities. Measures broad macro sentiment.",
+          "lagMonths": 6,
+          "discoveryCorr": 0.181,
+          "grangerP": 0.0083,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.259,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        },
+        {
+          "indicator": "brent",
+          "name": "Brent crude return",
+          "description": "Log return of Brent crude. Energy is an input cost for food and freight.",
+          "lagMonths": 6,
+          "discoveryCorr": 0.129,
+          "grangerP": 0.0091,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.072,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        }
+      ]
+    },
+    "ALU": {
+      "series": "Aluminum",
+      "unit": "$/mt",
+      "nPass": 2,
+      "indicators": [
+        {
+          "indicator": "fr1",
+          "name": "Futures return",
+          "description": "Month-end futures log return. Captures momentum in forward prices.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.451,
+          "grangerP": 0.0009,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.528,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        },
+        {
+          "indicator": "fgap",
+          "name": "Futures nowcast gap",
+          "description": "End-of-month futures close minus monthly average. Converts stale monthly-avg prices into a timely correction.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.511,
+          "grangerP": 0.0001,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.518,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        },
+        {
+          "indicator": "brent",
+          "name": "Brent crude return",
+          "description": "Log return of Brent crude. Energy is an input cost for food and freight.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.131,
+          "grangerP": 0.063,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.283,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        },
+        {
+          "indicator": "urea",
+          "name": "Urea return",
+          "description": "Log return of urea (fertiliser). Leading cost input for grains.",
+          "lagMonths": 4,
+          "discoveryCorr": -0.038,
+          "grangerP": 0.0772,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.151,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        },
+        {
+          "indicator": "xs_r1",
+          "name": "Cross-commodity momentum",
+          "description": "Average return of all other tracked commodities. Measures broad macro sentiment.",
+          "lagMonths": 2,
+          "discoveryCorr": 0.17,
+          "grangerP": 0.0039,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.031,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        }
+      ]
+    },
+    "COPPER": {
+      "series": "Copper",
+      "unit": "$/mt",
+      "nPass": 1,
+      "indicators": [
+        {
+          "indicator": "fgap",
+          "name": "Futures nowcast gap",
+          "description": "End-of-month futures close minus monthly average. Converts stale monthly-avg prices into a timely correction.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.695,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.497,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        },
+        {
+          "indicator": "fr1",
+          "name": "Futures return",
+          "description": "Month-end futures log return. Captures momentum in forward prices.",
+          "lagMonths": 3,
+          "discoveryCorr": 0.062,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.065,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        },
+        {
+          "indicator": "natgas",
+          "name": "Natural gas return",
+          "description": "Log return of US Henry Hub gas. Affects fertiliser (urea) and processing costs.",
+          "lagMonths": 6,
+          "discoveryCorr": -0.131,
+          "grangerP": 0.0743,
+          "grangerThreshold": 0.0083,
+          "oosCorr": -0.045,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "negative"
+        }
+      ]
+    },
+    "NICKEL": {
+      "series": "Nickel",
+      "unit": "$/mt",
+      "nPass": 0,
+      "indicators": [
+        {
+          "indicator": "brent",
+          "name": "Brent crude return",
+          "description": "Log return of Brent crude. Energy is an input cost for food and freight.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.001,
+          "grangerP": 0.0858,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.112,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        },
+        {
+          "indicator": "natgas",
+          "name": "Natural gas return",
+          "description": "Log return of US Henry Hub gas. Affects fertiliser (urea) and processing costs.",
+          "lagMonths": 6,
+          "discoveryCorr": -0.116,
+          "grangerP": 0.0868,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.07,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        }
+      ]
+    },
+    "ZINC": {
+      "series": "Zinc",
+      "unit": "$/mt",
+      "nPass": 0,
+      "indicators": []
+    },
+    "LEAD": {
+      "series": "Lead",
+      "unit": "$/mt",
+      "nPass": 0,
+      "indicators": []
+    },
+    "TIN": {
+      "series": "Tin",
+      "unit": "$/mt",
+      "nPass": 1,
+      "indicators": [
+        {
+          "indicator": "xs_r1",
+          "name": "Cross-commodity momentum",
+          "description": "Average return of all other tracked commodities. Measures broad macro sentiment.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.254,
+          "grangerP": 0.0039,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.195,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        },
+        {
+          "indicator": "brent",
+          "name": "Brent crude return",
+          "description": "Log return of Brent crude. Energy is an input cost for food and freight.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.162,
+          "grangerP": 0.0495,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.133,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        }
+      ]
+    },
+    "IRON": {
+      "series": "Iron ore, cfr spot",
+      "unit": "$/dmtu",
+      "nPass": 0,
+      "indicators": [
+        {
+          "indicator": "natgas",
+          "name": "Natural gas return",
+          "description": "Log return of US Henry Hub gas. Affects fertiliser (urea) and processing costs.",
+          "lagMonths": 4,
+          "discoveryCorr": -0.063,
+          "grangerP": 0.0011,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.108,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        },
+        {
+          "indicator": "brent",
+          "name": "Brent crude return",
+          "description": "Log return of Brent crude. Energy is an input cost for food and freight.",
+          "lagMonths": 3,
+          "discoveryCorr": 0.08,
+          "grangerP": 0.0801,
+          "grangerThreshold": 0.0083,
+          "oosCorr": -0.054,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "negative"
+        },
+        {
+          "indicator": "xs_r1",
+          "name": "Cross-commodity momentum",
+          "description": "Average return of all other tracked commodities. Measures broad macro sentiment.",
+          "lagMonths": 2,
+          "discoveryCorr": 0.111,
+          "grangerP": 0.0002,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.007,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        }
+      ]
+    },
+    "GOLD": {
+      "series": "Gold",
+      "unit": "$/troy oz",
+      "nPass": 1,
+      "indicators": [
+        {
+          "indicator": "fgap",
+          "name": "Futures nowcast gap",
+          "description": "End-of-month futures close minus monthly average. Converts stale monthly-avg prices into a timely correction.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.643,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.557,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        },
+        {
+          "indicator": "fr1",
+          "name": "Futures return",
+          "description": "Month-end futures log return. Captures momentum in forward prices.",
+          "lagMonths": 2,
+          "discoveryCorr": -0.122,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": -0.008,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "negative"
+        }
+      ]
+    },
+    "SILVER": {
+      "series": "Silver",
+      "unit": "$/troy oz",
+      "nPass": 2,
+      "indicators": [
+        {
+          "indicator": "fgap",
+          "name": "Futures nowcast gap",
+          "description": "End-of-month futures close minus monthly average. Converts stale monthly-avg prices into a timely correction.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.623,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.63,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        },
+        {
+          "indicator": "fr1",
+          "name": "Futures return",
+          "description": "Month-end futures log return. Captures momentum in forward prices.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.551,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.547,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        }
+      ]
+    },
+    "PLATINUM": {
+      "series": "Platinum",
+      "unit": "$/troy oz",
+      "nPass": 2,
+      "indicators": [
+        {
+          "indicator": "fgap",
+          "name": "Futures nowcast gap",
+          "description": "End-of-month futures close minus monthly average. Converts stale monthly-avg prices into a timely correction.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.628,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.667,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        },
+        {
+          "indicator": "fr1",
+          "name": "Futures return",
+          "description": "Month-end futures log return. Captures momentum in forward prices.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.617,
+          "grangerP": 0.0,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.543,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        },
+        {
+          "indicator": "brent",
+          "name": "Brent crude return",
+          "description": "Log return of Brent crude. Energy is an input cost for food and freight.",
+          "lagMonths": 6,
+          "discoveryCorr": -0.117,
+          "grangerP": 0.0775,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.083,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        },
+        {
+          "indicator": "xs_r1",
+          "name": "Cross-commodity momentum",
+          "description": "Average return of all other tracked commodities. Measures broad macro sentiment.",
+          "lagMonths": 6,
+          "discoveryCorr": -0.167,
+          "grangerP": 0.0081,
+          "grangerThreshold": 0.0083,
+          "oosCorr": -0.077,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "negative"
+        },
+        {
+          "indicator": "urea",
+          "name": "Urea return",
+          "description": "Log return of urea (fertiliser). Leading cost input for grains.",
+          "lagMonths": 1,
+          "discoveryCorr": -0.064,
+          "grangerP": 0.0777,
+          "grangerThreshold": 0.0083,
+          "oosCorr": -0.059,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "negative"
+        },
+        {
+          "indicator": "natgas",
+          "name": "Natural gas return",
+          "description": "Log return of US Henry Hub gas. Affects fertiliser (urea) and processing costs.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.102,
+          "grangerP": 0.0608,
+          "grangerThreshold": 0.0083,
+          "oosCorr": -0.045,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "negative"
+        }
+      ]
+    },
+    "BANANA": {
+      "series": "Banana, US",
+      "unit": "$/kg",
+      "nPass": 0,
+      "indicators": [
+        {
+          "indicator": "urea",
+          "name": "Urea return",
+          "description": "Log return of urea (fertiliser). Leading cost input for grains.",
+          "lagMonths": 2,
+          "discoveryCorr": -0.1,
+          "grangerP": 0.0879,
+          "grangerThreshold": 0.0083,
+          "oosCorr": -0.022,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "negative"
+        },
+        {
+          "indicator": "natgas",
+          "name": "Natural gas return",
+          "description": "Log return of US Henry Hub gas. Affects fertiliser (urea) and processing costs.",
+          "lagMonths": 2,
+          "discoveryCorr": 0.121,
+          "grangerP": 0.027,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.01,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        }
+      ]
+    },
+    "ORANGE": {
+      "series": "Orange",
+      "unit": "$/kg",
+      "nPass": 0,
+      "indicators": []
+    },
+    "TEA": {
+      "series": "Tea, avg 3 auctions",
+      "unit": "$/kg",
+      "nPass": 1,
+      "indicators": [
+        {
+          "indicator": "brent",
+          "name": "Brent crude return",
+          "description": "Log return of Brent crude. Energy is an input cost for food and freight.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.124,
+          "grangerP": 0.0064,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.151,
+          "oosThreshold": 0.15,
+          "pass": true,
+          "status": "PASS",
+          "direction": "positive"
+        },
+        {
+          "indicator": "xs_r1",
+          "name": "Cross-commodity momentum",
+          "description": "Average return of all other tracked commodities. Measures broad macro sentiment.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.113,
+          "grangerP": 0.011,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.082,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        },
+        {
+          "indicator": "urea",
+          "name": "Urea return",
+          "description": "Log return of urea (fertiliser). Leading cost input for grains.",
+          "lagMonths": 5,
+          "discoveryCorr": -0.126,
+          "grangerP": 0.0603,
+          "grangerThreshold": 0.0083,
+          "oosCorr": 0.014,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "positive"
+        }
+      ]
+    },
+    "TOBACCO": {
+      "series": "Tobacco, US import u.v.",
+      "unit": "$/mt",
+      "nPass": 0,
+      "indicators": [
+        {
+          "indicator": "xs_r1",
+          "name": "Cross-commodity momentum",
+          "description": "Average return of all other tracked commodities. Measures broad macro sentiment.",
+          "lagMonths": 1,
+          "discoveryCorr": 0.077,
+          "grangerP": 0.0852,
+          "grangerThreshold": 0.0083,
+          "oosCorr": -0.198,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "negative"
+        },
+        {
+          "indicator": "brent",
+          "name": "Brent crude return",
+          "description": "Log return of Brent crude. Energy is an input cost for food and freight.",
+          "lagMonths": 4,
+          "discoveryCorr": -0.026,
+          "grangerP": 0.0612,
+          "grangerThreshold": 0.0083,
+          "oosCorr": -0.016,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "negative"
+        }
+      ]
+    },
+    "TIMBER_MY": {
+      "series": "Logs, Malaysian",
+      "unit": "$/cubic meter",
+      "nPass": 0,
+      "indicators": [
+        {
+          "indicator": "xs_r1",
+          "name": "Cross-commodity momentum",
+          "description": "Average return of all other tracked commodities. Measures broad macro sentiment.",
+          "lagMonths": 5,
+          "discoveryCorr": 0.045,
+          "grangerP": 0.0075,
+          "grangerThreshold": 0.0083,
+          "oosCorr": -0.065,
+          "oosThreshold": 0.15,
+          "pass": false,
+          "status": "MARGINAL",
+          "direction": "negative"
+        }
+      ]
+    }
+  }
+}
