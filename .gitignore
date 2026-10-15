@@ -1,0 +1,21 @@
+node_modules/
+dist/
+
+# Local server state: encrypted secrets, master key, auth token, SQLite db, uploads
+.dhoomberg/
+*.log
+.env
+.env.*
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# ML research raw downloads and intermediates (re-create with research/fetch_data.py)
+research/data/
+
+# OS
+.DS_Store
+Thumbs.db

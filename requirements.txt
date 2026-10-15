@@ -1,0 +1,14 @@
+# Python side of Dhoomberg.
+# Install with:  pip install -r requirements.txt   (Python 3.10+)
+
+# Plugin runtime (dhoomberg_runtime/, plugins/*.py)
+numpy>=1.26
+pandas>=2.1
+
+# Research / ML pipeline (research/*.py)
+scipy>=1.11
+scikit-learn>=1.4
+statsmodels>=0.14
+
+# Optional, tests only: regenerates the indicator reference fixtures (tests/fixtures/gen_talib.py)
+# TA-Lib>=0.6
