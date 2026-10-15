@@ -4,6 +4,28 @@ A commodity intelligence terminal for FMCG and supply chain teams. Runs entirely
 
 ![Dhoomberg terminal showing Cocoa price with Bollinger Bands, RSI, MACD, Holt model forecast, and blotter with a pending approval](docs/assets/terminal.png)
 
+**[Watch the 73-second demo](docs/assets/demo.mp4)**
+
+---
+
+## See it work
+
+**Pick a model, and see how it scores against the naive baseline.** The skill badge is always shown, even when it's negative.
+
+![Chart with indicator and model dropdowns, forecast overlay and out-of-sample skill badge](docs/assets/models.gif)
+
+**Turn a signal into an order.** Rules go through the risk guard, then wait for your approval in the blotter.
+
+![Rule fires, an approval appears in the blotter, and orders fill on the paper broker](docs/assets/execute.gif)
+
+**Bring your own algorithms.** Drop a Python file in `plugins/` and it shows up in the dropdowns.
+
+![Settings page listing built-in indicators and discovered Python plugins](docs/assets/custom.gif)
+
+**Drive everything from the command bar.**
+
+![Command bar switching commodities and comparing two instruments](docs/assets/command.gif)
+
 ---
 
 ## What it does
